@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/marketinsightsai/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/marketinsightsai/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/marketinsightsai",
+  "projects": {
+    "marketinsightsai": {
+      "type": "application",
+      "root": "apps/marketinsightsai",
+      "entryFile": "main",
+      "sourceRoot": "apps/marketinsightsai/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/marketinsightsai/tsconfig.app.json"
+      }
+    },
+    "ingestion": {
+      "type": "application",
+      "root": "apps/ingestion",
+      "entryFile": "main",
+      "sourceRoot": "apps/ingestion/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ingestion/tsconfig.app.json"
+      }
+    },
+    "motherduck": {
+      "type": "library",
+      "root": "libs/motherduck",
+      "entryFile": "index",
+      "sourceRoot": "libs/motherduck/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/motherduck/tsconfig.lib.json"
+      }
+    }
+  }
+}
